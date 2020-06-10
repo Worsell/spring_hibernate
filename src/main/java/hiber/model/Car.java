@@ -14,11 +14,10 @@ public class Car {
 
     @Column(name = "series")
     private int series;
+
     @Column(name = "name")
     private String name;
 
-    @OneToOne(mappedBy = "car")
-    private User owner;
 
     public Car() {
     }
@@ -32,19 +31,10 @@ public class Car {
         return this;
     }
 
-    public User getOwner() {
-        return owner;
-    }
-
-    public Car setOwner(User owner) {
-        this.owner = owner;
-        return this;
-    }
 
     public Car(int series, String name, User owner) {
         this.series = series;
         this.name = name;
-        this.owner = owner;
     }
 
     public int getSeries() {
